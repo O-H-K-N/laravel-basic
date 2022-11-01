@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 // モデルの読み込み
 use App\Models\Test;
+
 
 class TestController extends Controller
 {
@@ -25,8 +27,14 @@ class TestController extends Controller
         // 条件指定したデータを取得
         $whereBBB = Test::where('text', '=', 'bbb')->get();
 
+
+        /* クエリビルダ */
+        $queryBuilder = DB::table('tests')->where('text', '=', 'bbb')
+        ->select('id', 'text')
+        ->get();
+
         // デバッガー：処理を止め内容を確認できる
-        dd($values, $count, $first, $whereBBB);
+        dd($values, $count, $first, $whereBBB, $queryBuilder);
 
         // compact関数でView側に変数を渡すと楽
         return view('tests.test', compact('values'));
