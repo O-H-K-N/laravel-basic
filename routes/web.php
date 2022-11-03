@@ -35,7 +35,10 @@ Route::prefix('contacts')
 ->name('contacts.')
 // アクションをグループ化
 ->group(function(){
+  // お問い合わせ一覧ページ
   Route::get('/', 'index' )->name('index');
+  // お問い合わせ新規登録ページ
+  Route::get('/create', 'create' )->name('create');
 });
 
 Route::get('/', function () {
