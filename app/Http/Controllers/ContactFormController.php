@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactForm;
 use Illuminate\Http\Request;
 
 class ContactFormController extends Controller
@@ -34,7 +35,22 @@ class ContactFormController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // フォーム($request)に入力された内容を確認
+        // dd($request);
+
+        // createアクションでデータ保存
+        ContactForm::create([
+          'name' => $request->name,
+          'title' => $request->title,
+          'email' => $request->email,
+          'url' => $request->url,
+          'gender' => $request->gender,
+          'age' => $request->age,
+          'contact' => $request->contact,
+        ]);
+
+        // リダイレクトを指定
+        return to_route('contacts.index');
     }
 
     /**
