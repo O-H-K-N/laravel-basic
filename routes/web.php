@@ -47,6 +47,8 @@ Route::prefix('contacts')
   Route::get('/{id}/edit', 'edit')->name('edit');
   // お問い合わせ更新
   Route::post('/{id}', 'update')->name('update');
+  // お問い合わせ削除
+  Route::post('/{id}/destroy', 'destroy')->name('destroy');
 });
 
 Route::get('/', function () {
