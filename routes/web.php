@@ -45,6 +45,8 @@ Route::prefix('contacts')
   Route::get('/{id}', 'show')->name('show');
   // お問い合わせ情報編集ページ
   Route::get('/{id}/edit', 'edit')->name('edit');
+  // お問い合わせ更新
+  Route::post('/{id}', 'update')->name('update');
 });
 
 Route::get('/', function () {
