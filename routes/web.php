@@ -41,6 +41,8 @@ Route::prefix('contacts')
   Route::get('/create', 'create')->name('create');
   // お問い合わせ新規登録
   Route::post('/store', 'store')->name('store');
+  // お問い合わせ詳細ページ
+  Route::get('/{id}', 'show')->name('show');
 });
 
 Route::get('/', function () {
