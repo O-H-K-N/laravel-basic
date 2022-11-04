@@ -21,6 +21,7 @@
                       <div class="relative">
                         <label for="name" class="leading-7 text-sm text-gray-600">氏名</label>
                         <input type="text" id="name" name="name" value="{{ $contact->name }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
                       </div>
                     </div>
 
@@ -28,6 +29,7 @@
                       <div class="relative">
                         <label for="title" class="leading-7 text-sm text-gray-600">件名</label>
                         <input type="text" id="title" name="title" value="{{ $contact->title }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <x-input-error :messages="$errors->get('title')" class="mt-2" />
                       </div>
                     </div>
 
@@ -35,6 +37,7 @@
                       <div class="relative">
                         <label for="email" class="leading-7 text-sm text-gray-600">メールアドレス</label>
                         <input type="email" id="email" name="email" value="{{ $contact->email }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
                       </div>
                     </div>
 
@@ -42,6 +45,7 @@
                       <div class="relative">
                         <label for="url" class="leading-7 text-sm text-gray-600">ホームページ</label>
                         <input type="url" id="url" name="url" value="{{ $contact->url }}" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <x-input-error :messages="$errors->get('url')" class="mt-2" />
                       </div>
                     </div>
 
@@ -50,6 +54,7 @@
                         <label class="leading-7 text-sm text-gray-600">性別</label><br>
                         <input type="radio" name="gender" value="0" @if($contact->gender == 0) checked @endif>男性
                         <input type="radio" name="gender" value="1" @if($contact->gender == 1) checked @endif>女性
+                        <x-input-error :messages="$errors->get('gender')" class="mt-2" />
                       </div>
                     </div>
 
@@ -65,6 +70,7 @@
                           <option value="5" @if($contact->age === 5) selected @endif>50〜59歳</option>
                           <option value="6" @if($contact->age === 6) selected @endif>60際〜</option>
                         </select>
+                        <x-input-error :messages="$errors->get('age')" class="mt-2" />
                       </div>
                     </div>
 
@@ -72,6 +78,7 @@
                       <div class="relative">
                         <label for="contact" class="leading-7 text-sm text-gray-600">お問い合わせ内容</label>
                         <textarea id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{{ $contact->contact }}</textarea>
+                        <x-input-error :messages="$errors->get('contact')" class="mt-2" />
                       </div>
                     </div>
 

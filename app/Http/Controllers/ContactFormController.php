@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
 use App\Services\CheckFormService;
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\StoreUpdateContactRequest;
 
 class ContactFormController extends Controller
 {
@@ -37,7 +39,7 @@ class ContactFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreContactRequest $request)
     {
         // フォーム($request)に入力された内容を確認
         // dd($request);
@@ -95,7 +97,7 @@ class ContactFormController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreUpdateContactRequest $request, $id)
     {
         $contact = ContactForm::find($id);
 
