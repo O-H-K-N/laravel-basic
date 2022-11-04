@@ -43,6 +43,8 @@ Route::prefix('contacts')
   Route::post('/store', 'store')->name('store');
   // お問い合わせ詳細ページ
   Route::get('/{id}', 'show')->name('show');
+  // お問い合わせ情報編集ページ
+  Route::get('/{id}/edit', 'edit')->name('edit');
 });
 
 Route::get('/', function () {
