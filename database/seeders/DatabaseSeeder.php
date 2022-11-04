@@ -14,11 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // ユーザーのダミーデータを作成
+        $this->call([
+            UserSeeder::class,
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // お問い合わせのダミーデータを作成
+        \App\Models\ContactForm::factory(100)->create();
     }
 }
