@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
         // ユーザーのダミーデータを作成
         $this->call([
             UserSeeder::class,
+            AreaSeeder::class,
+            ShopSeeder::class,
+            RouteSeeder::class,
+            RouteShopSeeder::class,
         ]);
 
         // お問い合わせのダミーデータを作成
